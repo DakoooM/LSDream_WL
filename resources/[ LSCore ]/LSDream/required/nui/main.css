@@ -105,15 +105,8 @@
 }
 
 /* Status Bar */
-.status-heal-back {
-    position: fixed;
-    width: 6.5%;
-    height: 1.3%;
-    top: 96.5%;
-    left: 1.5%;
-    border-radius: 0.1rem;
-    background-color: rgba(26, 37, 24, 0.616);
-}
+
+/* heal */
 
 .status-heal {
     position: fixed;
@@ -123,7 +116,31 @@
     left: 1.5%;
     border-radius: 0.1rem;
     background-color: rgb(7, 156, 2);
-    animation: statusColor 3s linear;
+    animation: statusColorHeal 3s linear;
+    transition: 1.5s linear;
+}
+
+.status-heal-back {
+    position: fixed;
+    width: 6.5%;
+    height: 1.3%;
+    top: 96.5%;
+    left: 1.5%;
+    border-radius: 0.1rem;
+    background-color: rgba(7, 156, 2, 0.3);
+}
+
+/* armor */
+
+.status-armor {
+    position: fixed;
+    width: 2.0%;
+    height: 1.3%;
+    top: 96.5%;
+    left: 9%;
+    border-radius: 0.1rem;
+    background-color: rgb(0, 98, 255);
+    animation: statusColorArmor 3s linear;
     transition: 1.5s linear;
 }
 
@@ -134,7 +151,21 @@
     top: 96.5%;
     left: 9%;
     border-radius: 0.1rem;
-    background-color: rgb(61, 61, 61);
+    background-color: rgba(0, 98, 255, 0.3);
+}
+
+/* faim */
+
+.status-faim {
+    position: fixed;
+    width: 2.0%;
+    height: 1.3%;
+    top: 98%;
+    left: 1.5%;
+    border-radius: 0.1rem;
+    background-color: rgb(255, 166, 0);
+    animation: statusColorFaim 3s linear;
+    transition: 1.5s linear;
 }
 
 .status-faim-back {
@@ -144,7 +175,20 @@
     top: 98%;
     left: 1.5%;
     border-radius: 0.1rem;
-    background-color: rgb(61, 61, 61);
+    background-color: rgba(114, 82, 23, 0.3);
+}
+
+/* soif */
+.status-soif {
+    position: fixed;
+    width: 4.0%;
+    height: 1.3%;
+    top: 98%;
+    left: 9%;
+    border-radius: 0.1rem;
+    background-color: rgb(0, 132, 255);
+    animation: statusColorFaim 3s linear;
+    transition: 1.5s linear;
 }
 
 .status-soif-back {
@@ -154,16 +198,40 @@
     top: 98%;
     left: 9%;
     border-radius: 0.1rem;
-    background-color: rgb(61, 61, 61);
+    background-color: rgba(50, 91, 124, 0.3);
 }
 
-@keyframes statusColor {
+/* Animations */
+
+@keyframes statusColorHeal {
     0% {
         width: 0%;
         background-color: red;
     }
     80% {
         width: 6.5%;
-        background-color: green;
+        background-color: rgb(7, 156, 2);
+    }
+}
+
+@keyframes statusColorArmor {
+    0% {
+        width: 0%;
+        background-color: red;
+    }
+    80% {
+        width: 6.5%;
+        background-color: rgb(0, 98, 255);
+    }
+}
+
+@keyframes statusColorFaim {
+    0% {
+        width: 0%;
+        background-color: red;
+    }
+    80% {
+        width: 6.5%;
+        background-color: rgb(255, 179, 0);
     }
 }

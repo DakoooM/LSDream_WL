@@ -9,13 +9,27 @@ Config.ResourceList = {
     ["chat"] = true,
     ["LSDream"] = true,
     ["loadscreen"] = true,
-    ["oxmysql"] = true,
     ["webpack"] = true,
     ["yarn"] = true
 }
 
+Config.AdminGroups = {
+    {
+        group = "fondator", 
+        label = "Fondateur"
+    },
+    {
+        group = "superadmin", 
+        label = "Super Admin"
+    },
+    {
+        group = "moderator", 
+        label = "Modérateur"
+    }
+}
+
 Config.BlacklistEvent = {
-    ["getPersonalData"] = true,
+    "esx_ambulancejob:revive",
 }
 
 Config.PropsBlacklist = {

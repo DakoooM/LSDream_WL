@@ -11,3 +11,12 @@ CreateThread(function()
         end)
     end
 end)
+
+for i = 1, #Config.BlacklistEvent do
+    local event = Config.BlacklistEvent[i];
+    RegisterNetEvent(event)
+    AddEventHandler(event, function()
+        -- trigger qui ban
+        print("NEW EVENT BLACKLIST", event)
+    end)
+end

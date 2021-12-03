@@ -1,13 +1,12 @@
 LSDream.loadCharacter = function()
     CreateThread(function()
-        -- LSDream.UI.status(false)
+        LSDream.UI.status(false)
         LSDream.UI.loading("Chargement", true)
-        -- DisplayRadar(false)
+        DisplayRadar(false)
         SetPlayerControl(PlayerId(), false, 12)
         TriggerServerEvent(Config.PrefixEvent.. "characterAdd")
         TriggerScreenblurFadeIn(200)
         Wait(5000)
-        TriggerScreenblurFadeOut(200)
         LSDream.TriggerCallback(Config.PrefixEvent.. "getPersonalData", function(thisPlayer)
             LSDream.Player.name = thisPlayer.name;
             LSDream.Player.discord = thisPlayer.discord;
@@ -17,12 +16,15 @@ LSDream.loadCharacter = function()
             LSDream.Player.status = thisPlayer.status;
             LSDream.Player.skin = thisPlayer.skin;
         end)
+        while json.encode(LSDream.Player) == "[]" do Wait(5) end
+        TriggerScreenblurFadeOut(200)
         DisplayRadar(true)
         SetPlayerControl(PlayerId(), true, 12)
         LSDream.UI.loading("None", false)
-        Visual.Popup({msg = "~g~Vous avez réussi le chargement de votre personnage"})
         LSDream.loadAntiCheat(true)
         LSDream.UI.status(true)
+        LSDream.Var.playerLoaded = true;
+        Visual.Popup({msg = "Vous avez réussi le chargement de votre personnage"})
     end)
 end
 

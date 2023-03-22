@@ -1,2 +1,3 @@
 # LSDream_WL
-project
+
+This project is fivem framework not finished as 100%, just finished as 5/10%
